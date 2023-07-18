@@ -4,8 +4,11 @@ function ContactItem(props) {
   return (
     <div>
       <h4>
-        {props.contact.title}
+        {props.contact.name}
       </h4>
+
+      <span> {props.contact.phone} </span>
+
     </div>
   )
 }

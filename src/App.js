@@ -8,7 +8,7 @@ function App() {
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    fetch('https://jsonplaceholder.typicode.com/users')
       .then((response) => response.json())
       .then((data) => setContacts(data))
       .catch((error) => {
@@ -16,22 +16,19 @@ function App() {
       });
   }, []);
 
+  const [tempContacts, setTempContacts] = useState([]);
 
-  const addContacts = () => {
+  const addContacts = (name, phone)=>{
 
-    fetch('https://jsonplaceholder.typicode.com/posts', {
-      method: 'POST',
-      body: JSON.stringify({
-        title: 'foo',
-        body: 'bar',
-        userId: 1,
-      }),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => console.log(json));
+    console.log(name, phone)
+
+    const myContacts = {
+      name: name,
+      phone: phone
+    }
+
+    setTempContacts([...tempContacts , myContacts]);
+
   }
 
 
@@ -40,9 +37,9 @@ function App() {
 
       <h1>Contact Container</h1>
 
-      <AddContact />
+      <AddContact addContacts={addContacts} />
 
-      <Contacts contacts={contacts} />
+      <Contacts contacts={contacts} tempContacts={tempContacts} />
 
     </div>
   );

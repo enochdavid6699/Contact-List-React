@@ -4,7 +4,13 @@ import ContactItem from './ContactItem'
 function Contacts(props) {
   return (
     <div>
-      <h2>Contact</h2>
+      <h2>Contacts</h2>
+
+      {props.tempContacts.map((contact)=>{
+        return (
+            <ContactItem contact={contact}/>
+        )
+      })} 
 
       {props.contacts.length === 0 ? (
         "No Contacts to display"
