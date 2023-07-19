@@ -27,7 +27,7 @@ function AddContact(props) {
 
             <h1>Add a Contact</h1>
 
-            <form onSubmit={submit}>
+            <form onSubmit={submit} className='add-contact-form'>
 
                 <label for="exampleFormControlInput1" className="form-label" >Contact</label>
                 <input type="text" className="form-control" id="exampleFormControlInput1" value={name} onChange={(e) => { setName(e.target.value) }} />

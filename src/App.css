@@ -38,6 +38,10 @@
   }
 }
 
+.btn-success{
+  margin: 10px;
+}
+
 .cart-item {
   border: 2px solid;
   padding: 10px;
@@ -48,6 +52,7 @@
 .cart-item-info{
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .cart-item-update{
