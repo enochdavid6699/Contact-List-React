@@ -41,11 +41,23 @@ function App() {
 
   }
 
-  const updateContacts = (contact)=>{
+  const updateContacts = (contactId, name, phone) => {
+    const updatedContacts = tempContacts.map((contact) => {
+      if (contact.id === contactId) {
+        // Update the contact's properties with the provided name and phone
+        return {
+          ...contact,
+          name: name,
+          phone: phone,
+        };
+      }
+      return contact; // Return the original contact if it's not the one to update
+    });
 
-
-  }
-
+    setTempContacts(updatedContacts);
+    console.log('Updated:', contactId, name, phone);
+  };
+  
 
   return (
     <div className="App">
