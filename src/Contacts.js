@@ -4,7 +4,8 @@ import ContactItem from './ContactItem'
 function Contacts(props) {
   return (
     <div>
-      <h2>Contacts</h2> 
+      
+      <h1>My Contacts</h1> 
 
       {props.tempContacts.length === 0 ? (
         "No Contacts to display"

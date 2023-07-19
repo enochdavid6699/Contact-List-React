@@ -24,18 +24,19 @@ function AddContact(props) {
 
     return (
         <div>
-            <form className="row g-3" onSubmit={submit}>
-                <div className="col-md-6">
-                    <label htmlFor="name" className="htmlForm-label">Contact</label>
-                    <input type="text" className="htmlForm-control" id="name" value={name} onChange={(e) => { setName(e.target.value) }} />
-                </div>
-                <div className="col-md-6">
-                    <label htmlFor="phone" className="htmlForm-label">Phone Number</label>
-                    <input type="text" className="htmlForm-control" id="phone" value={phone} onChange={(e) => { setPhone(e.target.value) }} />
-                </div>
-                <div className="col-12">
-                    <button type="submit" className="btn btn-primary">Add Contact</button>
-                </div>
+
+            <h1>Add a Contact</h1>
+
+            <form onSubmit={submit}>
+
+                <label for="exampleFormControlInput1" className="form-label" >Contact</label>
+                <input type="text" className="form-control" id="exampleFormControlInput1" value={name} onChange={(e) => { setName(e.target.value) }} />
+
+                <label for="exampleFormControlInput2">Phone Number</label>
+                <input type="text" className="form-control" id="exampleFormControlInput2" value={phone} onChange={(e) => { setPhone(e.target.value) }} />
+
+                <button type="submit" className="btn btn-success" >Add Contact</button>
+
             </form>
         </div>
     )

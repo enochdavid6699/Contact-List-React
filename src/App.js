@@ -57,12 +57,9 @@ function App() {
     setTempContacts(updatedContacts);
     console.log('Updated:', contactId, name, phone);
   };
-  
 
   return (
     <div className="App">
-
-      <h1>Contact Container</h1>
 
       <AddContact addContacts={addContacts} />
 

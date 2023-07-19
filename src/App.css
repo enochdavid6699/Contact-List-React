@@ -32,7 +32,69 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
+.cart-item {
+  border: 2px solid;
+  padding: 10px;
+  margin-inline: 50px;
+  margin-block: 13px;
+}
+
+.cart-item-info{
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-item-update{
+  border-top: 1px solid;
+}
+
+.container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the form elements and labels */
+
+.cart-item-update label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.cart-item-update input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style for the update button */
+
+.cart-item-update button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 16px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-item-update button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
