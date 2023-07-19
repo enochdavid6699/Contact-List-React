@@ -5,29 +5,44 @@ import React, { useState, useEffect } from 'react';
 
 function App() {
 
-  const [contacts, setContacts] = useState([]);
+  const [tempContacts, setTempContacts] = useState([]);
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then((response) => response.json())
-      .then((data) => setContacts(data))
+      .then((data) => setTempContacts(data))
       .catch((error) => {
         console.log('Error fetching contacts:', error);
       });
   }, []);
 
-  const [tempContacts, setTempContacts] = useState([]);
 
-  const addContacts = (name, phone)=>{
-
-    console.log(name, phone)
+  const addContacts = (name, phone) => {
 
     const myContacts = {
       name: name,
-      phone: phone
+      phone: phone,
+      id: tempContacts.length
     }
 
-    setTempContacts([...tempContacts , myContacts]);
+    // Add the new contacts to the top of the array using unshift
+    const updatedContacts = [myContacts, ...tempContacts];
+    setTempContacts(updatedContacts);
+
+  }
+
+  const deleteContacts = (contact) =>{
+
+    setTempContacts(tempContacts.filter((e)=>{
+      return e!==contact;
+    }));
+    
+    console.log('Deleted:', contact);
+
+  }
+
+  const updateContacts = (contact)=>{
+
 
   }
 
@@ -39,7 +54,7 @@ function App() {
 
       <AddContact addContacts={addContacts} />
 
-      <Contacts contacts={contacts} tempContacts={tempContacts} />
+      <Contacts tempContacts={tempContacts} deleteContacts={deleteContacts} updateContacts={updateContacts} />
 
     </div>
   );

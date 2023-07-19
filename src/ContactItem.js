@@ -9,6 +9,11 @@ function ContactItem(props) {
 
       <span> {props.contact.phone} </span>
 
+      <button onClick={()=>{props.updateContacts(props.contact)}} >Update</button>
+
+      <button onClick={()=>{props.deleteContacts(props.contact)}} >Delete</button>
+
+
     </div>
   )
 }
